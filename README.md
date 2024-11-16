@@ -5,6 +5,7 @@ A lightweight Chrome Extension to replace the "New Tab" page with a simple edita
 ## Technologies Used
 
 - [Google Chrome Extension Manifest v3](https://developer.chrome.com/docs/extensions/reference/manifest)
+- [`chrome.storage` API](https://developer.chrome.com/docs/extensions/reference/api/storage)
 
 See also [referenced resources](REFERENCES.md)
 
