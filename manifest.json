@@ -1,0 +1,10 @@
+{
+    "name": "Just, one more thing...",
+    "description": "Replaces the new tab page with a single editable free text field",
+    "version": "0.1",
+    "incognito": "split",
+    "chrome_url_overrides": {
+      "newtab": "index.html"
+    },
+    "manifest_version": 3
+  }
