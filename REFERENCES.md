@@ -21,3 +21,4 @@
 ## Stack Overflow
 
 - [End editing in `contentenditable` on return key](https://stackoverflow.com/questions/67017802/end-editing-in-contenteditable-on-return-key). Adopted this approach, with additional improvement of re-enabled editing instantly via an Event Listener on `focusout` event.
+- [How to trigger focus to the Google Chome Address Bar](https://stackoverflow.com/questions/44586548/how-to-trigger-focus-to-the-google-chrome-address-bar-omnibox). After you type in the text box provided by this extension, focus does not return to the Address Bar. There's no way around this. Shouldn't be too much of a hassle, as when you open a new tab, the Address Bar is focused by default, so this issue only affects you when you do edit the text, in which case some small friction of moving onto another webpage is probably okay.
