@@ -2,6 +2,12 @@
 
 A lightweight Chrome Extension to replace the "New Tab" page with a simple editable text box.
 
+## Technologies Used
+
+- [Google Chrome Extension Manifest v3](https://developer.chrome.com/docs/extensions/reference/manifest)
+
+See also [referenced resources](REFERENCES.md)
+
 ## Development
 
 - Clone this repository.
