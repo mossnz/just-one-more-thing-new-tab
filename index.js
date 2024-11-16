@@ -23,10 +23,15 @@ oneMoreThing.addEventListener("keypress", (keyPressed) => {
 })
 
 oneMoreThing.addEventListener("focusout", () => {
-    oneMoreThing.setAttribute('contentEditable','plaintext-only') 
+    oneMoreThing.setAttribute('contentEditable', 'plaintext-only')
     // once editing has been ended by pressing Enter, re-enable editing.
 })
 
 chrome.storage.sync.onChanged.addListener((changes) => {
-    oneMoreThing.textContent = changes.oneThing.newValue
+    if (!document?.hasFocus()) { 
+        // don't update via storage when we have focus
+        // as that likely correlates to actively typing
+        console.log(changes.oneThing.newValue)
+        oneMoreThing.textContent = changes.oneThing.newValue
+    }
 })
