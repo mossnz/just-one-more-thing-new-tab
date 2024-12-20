@@ -12,10 +12,26 @@ async function getOneMoreThingFromStorage() {
 addEventListener("load", getOneMoreThingFromStorage())
 
 oneMoreThing.addEventListener("input", async () => {
-    console.log(oneMoreThing.textContent)
     await storage.set({ oneThing: oneMoreThing.textContent })
 })
 
+oneMoreThing.addEventListener("keypress", (keyPressed) => {
+    if (keyPressed.key === 'Enter') {
+        keyPressed.preventDefault() // do not create a new line
+        oneMoreThing.removeAttribute('contenteditable') // end editing
+    }
+})
+
+oneMoreThing.addEventListener("focusout", () => {
+    oneMoreThing.setAttribute('contentEditable', 'plaintext-only')
+    // once editing has been ended by pressing Enter, re-enable editing.
+})
+
 chrome.storage.sync.onChanged.addListener((changes) => {
-    oneMoreThing.textContent = changes.oneThing.newValue
+    if (!document?.hasFocus()) { 
+        // don't update via storage when we have focus
+        // as that likely correlates to actively typing
+        console.log(changes.oneThing.newValue)
+        oneMoreThing.textContent = changes.oneThing.newValue
+    }
 })
